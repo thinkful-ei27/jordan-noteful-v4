@@ -8,6 +8,7 @@ const User = require('../models/user');
 // ===== Define and create basicStrategy ===== \\
 const localStrategy = new LocalStrategy((username, password, done) => {
   let user;
+  console.log(username, password);
   User.findOne({ username }) 
     .then(results => {
       user = results;

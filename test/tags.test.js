@@ -417,7 +417,5 @@ describe('Noteful API - Tags', function () {
           expect(res.body.message).to.equal('Internal Server Error');
         });
     });
-
   });
-
 });

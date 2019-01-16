@@ -395,8 +395,9 @@ const noteful = (function () {
         password: loginForm.find('.js-password-entry').val()
       };
 
-      api.create('/api/login', loginUser)
+      api.create('/api/auth/login', loginUser)
         .then(response => {
+          store.authToken = response.authToken;
           store.currentUser = response;
           store.authorized = true;
           loginForm[0].reset();
