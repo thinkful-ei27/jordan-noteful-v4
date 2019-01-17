@@ -1,18 +1,14 @@
 'use strict';
 
 const express = require('express');
-// const mongoose = require('mongoose');
-// const passport = require('passport');
 
 const User = require('../models/user');
 
 const router = express.Router();
 
-// router.use('/', passport.authenticate('jwt', { session: false }));
-
 router.post('/', (req, res, next) => {
   const { username, fullname, password } = req.body;
-  const user = {username, fullname, password};
+  const user = { username, fullname, password };
 
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
@@ -90,7 +86,7 @@ router.post('/', (req, res, next) => {
       const newUser = {
         username,
         password: digest,
-        fullname
+        fullname: fullname.trim()
       };
       return User.create(newUser);
     })
@@ -100,7 +96,7 @@ router.post('/', (req, res, next) => {
         .json(result);
     })
     .catch(err => {
-      if(err.code === 11000) {
+      if (err.code === 11000) {
         err = new Error('The username already exists');
         err.status = 400;
       }

@@ -2,7 +2,6 @@
 
 const express = require('express');
 const passport = require('passport');
-const User = require('../models/user');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET, JWT_EXPIRY } = require('../config');

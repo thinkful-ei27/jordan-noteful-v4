@@ -17,7 +17,7 @@ chai.use(chaiHttp);
 const expect = chai.expect;
 const sandbox = sinon.createSandbox();
 
-describe('Noteful API - Notes', function () {
+describe.skip('Noteful API - Notes', function () {
 
   before(function () {
     return mongoose.connect(TEST_MONGODB_URI, { useNewUrlParser: true, useCreateIndex : true })

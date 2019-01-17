@@ -44,11 +44,13 @@ router.get('/', (req, res, next) => {
 });
 
 /* ========== GET/READ A SINGLE ITEM ========== */
+
 router.get('/:id', (req, res, next) => {
   const { id } = req.params;
   const userId = req.user.id;
 
   /***** Never trust users - validate input *****/
+  
   if (!mongoose.Types.ObjectId.isValid(id)) {
     const err = new Error('The `id` is not valid');
     err.status = 400;
@@ -126,9 +128,7 @@ function validateTagIds(tags, userId) {
   }
 }
   
-
 /* ========== POST/CREATE AN ITEM ========== */
-
 
 router.post('/', (req, res, next) => {
   const { title, content, folderId, tags } = req.body;
@@ -180,6 +180,7 @@ router.put('/:id', (req, res, next) => {
     }
 
   });
+
   /***** Never trust users - validate input *****/
   if (!mongoose.Types.ObjectId.isValid(id)) {
     const err = new Error('The `id` is not valid');
@@ -197,6 +198,7 @@ router.put('/:id', (req, res, next) => {
     delete toUpdate.folderId;
     toUpdate.$unset = { folderId: 1 };
   }
+
   Promise.all([
     validateFolderId(toUpdate.folderId, userId),
     validateTagIds(toUpdate.tags, userId)
@@ -217,6 +219,7 @@ router.put('/:id', (req, res, next) => {
 });
 
 /* ========== DELETE/REMOVE A SINGLE ITEM ========== */
+
 router.delete('/:id', (req, res, next) => {
   const { id } = req.params;
   const userId = req.user.id;
