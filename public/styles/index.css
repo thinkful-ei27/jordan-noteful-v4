@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  /* font-family: 'Roboto Slab', serif; */
+  font-family: 'Proza Libre', sans-serif;
+}
 
 /* reset ul and li formatting */
 
@@ -123,7 +127,7 @@ main article {
 }
 
 nav li {
-  border-top: 0.1px solid #08111b;
+  border-top: 0.1px solid #1D4288;
 }
 
 nav ul {
@@ -251,46 +255,64 @@ body>main {
 }
 
 .active {
-  background-color: #4e565d;
+  background-color: #fff266;
 }
 
 /***** THEME *****/
 
 body {
-  background-color: #353d44;
-  color: #d7d9db;
+  background-color: #FFF697;
+  color: #4e565d;
 }
 
 body>header,
 body>footer {
-  background-color: #292f35;
+  background-color: #1D4288;
+  color: #FFFFFF;
 }
 
 input,
 textarea,
 button {
-  background-color: #4e565d;
-  color: #FFFFFF;
-  border: 1px solid #929fad;
+  background-color: #fff266;
+  color: #4e565d;
+  border: 1px solid #1D4288;
   border-radius: 4px;
+}
+
+.date,
+.tags {
+  color: #484848;
 }
 
 article input,
 article textarea,
 article button {
-  color: #FFFFFF;
-  border: 1px solid #929fad;
+  color: #4e565d;
+  border: 1px solid #1D4288;
   border-radius: 4px;
 }
 
+.folders-tags {
+  border: 0.1px solid #1D4288;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+.folders-list{
+  border-bottom: 0.1px solid #1D4288;
+}
+
 a {
-  color: #d7d9db;
+  color: #4e565d;
   text-decoration: none;
 }
 
 select {
-  background-color: #4e565d;
-  color: #FFFFFF;
+  background-color: #FFF697;
+  color: #4e565d;
   display: inline-block;
 }
 
@@ -299,10 +321,14 @@ select {
   display:none;
 }
 .success-message {
-  color:limegreen;
+  color:green;
   display:none;
 }
 
 .signup-login {
-  background-color: #353d44;
+  background-color: #FFF697;
+}
+
+.signup-login  fieldset {
+  border: 1px solid #1D4288;
 }
