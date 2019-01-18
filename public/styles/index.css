@@ -327,7 +327,8 @@ article button {
   border-radius: 4px;
 }
 
-.folders-tags {
+.folders-tags,
+.notes {
   border: 0.1px solid #1D4288;
 }
 
