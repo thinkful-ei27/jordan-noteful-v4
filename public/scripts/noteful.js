@@ -394,7 +394,6 @@ const noteful = (function () {
         username: loginForm.find('.js-username-entry').val(),
         password: loginForm.find('.js-password-entry').val()
       };
-
       api.create('/api/auth/login', loginUser)
         .then(response => {
           store.authToken = response.authToken;

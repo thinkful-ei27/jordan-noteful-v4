@@ -23,7 +23,7 @@ li {
 }
 
 li{
-  background-color: #ffff99;
+  background-color: #ACD3E4;
 }
 
 input,
@@ -39,15 +39,12 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 0;
-}
-
-h1 {
-  font-size: large;
+  margin: 0 auto;
 }
 
 h2 {
   font-size: medium;
+  
 }
 
 h3 {
@@ -68,7 +65,8 @@ body>main {
   display: flex;
   /* Total height minus Header and Footer */
   height: calc(100vh - 6em);
-  min-height: 400px;
+  flex: 1 0 100%;
+  min-height: 100%;
   position: relative;
 }
 
@@ -166,6 +164,15 @@ section {
   padding: 20px;
 }
 
+/* .hide {
+  display: none;
+} */
+
+.note-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .signup-login {
   display: flex;
   flex-direction: row;
@@ -177,33 +184,31 @@ section {
   overflow: auto;
   position: absolute;
 
-
-  
-
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("https://images.pexels.com/photos/472311/pexels-photo-472311.jpeg");
+  background-image: url("/images/bus.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #FFF697;
+  background-size: 100%;
+  background-color: #FFF2A7;
   z-index: 2;
 }
 
 
 .signup-login fieldset {
   display: inline-block;
- 
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #ffff99;
+  background-color: #ACD3E4;
 }
 
 .signup-login fieldset legend {
-  color: black
+  color: black;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .signup-login input,
@@ -220,9 +225,16 @@ section {
 
 body>header,
 body>footer {
-  height: 3em;
+
   padding: 1em;
   border: 0.1px solid #929fad;
+}
+
+body>footer {
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 nav header,
@@ -282,16 +294,16 @@ body>main {
 }
 
 .active button {
-  background-color: #ffff99;
+  background-color: #ACD3E4;
 }
 
 /***** THEME *****/
 
 body {
-  background-image: url("https://images.pexels.com/photos/472311/pexels-photo-472311.jpeg");
+  background-image: url("/images/bus.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #FFF697;
+  background-color: #FFF2A7;
   color: #4e565d;
 }
 
@@ -303,7 +315,16 @@ body>footer {
 
 input,
 textarea {
-  background-color: #ffff99;
+  background-color: #FFF2A7;
+  color: #4e565d;
+  border: 1px solid #1D4288;
+  border-radius: 4px;
+}
+
+
+.signup-login input,
+.signup-login textarea {
+  background-color: #FFF2A7;
   color: #4e565d;
   border: 1px solid #1D4288;
   border-radius: 4px;
@@ -347,14 +368,25 @@ a {
 }
 
 select {
-  background-color: #ffff99;
+  background-color: #ffcc66;
   color: #4e565d;
   display: inline-block;
 }
 
+header {
+  display: flexbox;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+
 .error-message {
   color:red;
   display:none;
+  width: 100%;
 }
 .success-message {
   color:green;

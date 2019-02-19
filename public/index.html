@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Notes</title>
+  <title>Adventure Journal</title>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
   <link rel="stylesheet" href="styles/index.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
@@ -16,14 +16,14 @@
 
 <body>
   <header>
-    <h1>Notes</h1>
+    <h1>Adventure Journal</h1>
   </header>
   <main>
     <section class="signup-login">
       <form id="signup-form" class="js-signup-from">
         <fieldset>
-          <legend>Signup</legend>
           <div>
+            <legend>Signup</legend>
             <label for="fullname">Full Name</label>
             <input type="text" name="fullname" class="js-fullname-entry" value="">
           </div>
@@ -41,8 +41,8 @@
 
       <form id="login-form" class="js-login-form">
         <fieldset>
-          <legend>Login</legend>
           <div>
+            <legend>Login</legend>
             <label for="username">Username</label>
             <input type="text" name="username" class="js-username-entry" value="">
           </div>
@@ -56,10 +56,9 @@
 
 
     </section>
-
-    <nav class="folders-tags">
+    <nav class="folders-tags hide">
       <header>
-        <h2>Folders</h2>
+        <h2>Trips</h2>
         <form id="new-folder-form" class="js-new-folder-form">
           <input type="text" class="js-new-folder-entry" placeholder="folder name">
           <button type="submit">add</button>
@@ -77,7 +76,7 @@
       <ul class="tags-list js-tags-list"></ul>
     </nav>
 
-    <nav class="notes">
+    <nav class="notes hide">
       <header>
         <h2>Notes</h2>
         <form id="notes-search-form" class="js-notes-search-form">
@@ -88,7 +87,7 @@
       <ul class="js-notes-list"></ul>
     </nav>
 
-    <article>
+    <article class="active-note hide">
       <header>
         <h2>Note</h2>
         <form id="new-note-form" class="js-start-new-note-form">
@@ -98,22 +97,26 @@
       <form id="note-edit-form" class="js-note-edit-form">
         <input type="text" name="note-title" class="js-note-title-entry" required placeholder="title">
         <textarea name="note-content" class="js-note-content-entry" placeholder="content"></textarea>
-        <select name="folder" class="js-note-folder-entry"></select>
-        <select name="tags" class="js-note-tags-entry" multiple="multiple"></select>
-        <button type="submit">save</button>
+        <div class="note-controls">
+          <select name="folder" class="js-note-folder-entry"></select>
+          <select name="tags" class="js-note-tags-entry" multiple="multiple"></select>
+          <button type="submit">Save</button>
+        </div>
       </form>
     </article>
-
   </main>
 
   <footer>
-		<div class="success-message js-success-message"></div>
-		<div class="error-message js-error-message"></div>
-	</footer>
+    <div class="system-response">
+      <div class="success-message js-success-message"></div>
+      <div class="error-message js-error-message"></div>
+    </div>
+  </footer>
 
-  <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js" integrity="sha256-ABVkpwb9K9PxubvRrHMkk6wmWcIHUE9eBxNZLXYQ84k="
+  <script src="//code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"
+    integrity="sha256-ABVkpwb9K9PxubvRrHMkk6wmWcIHUE9eBxNZLXYQ84k=" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="scripts/api.js"></script>
   <script type="text/javascript" src="scripts/store.js"></script>
